@@ -1,0 +1,44 @@
+#数据源
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mini-video?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+#  文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+#server服务器配置
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+##mybatis
+#mybatis:
+#  type-aliases-package: com.deng.pojo
+#  mapper-locations: classpath:mapper/*.xml
+##  通用mapper配置
+#mapper:
+#  mappers: com.deng.utils.MyMapper
+#  not-empty: false
+#  identity: MYSQL
+#分页插件
+#pagehelper:
+#  helper-dialect: mysql
+#  support-methods-arguments: true
+#  params: count=countSql
