@@ -3,7 +3,12 @@
 	export default {
 		globalData: {
 			serverUrl: 'http://192.168.1.162:8081',
-			userInfo: null
+			userInfo: {
+				faceImage: "../../static/user/face.jpg",
+				fansCounts: 0,
+				followCounts: 0,
+				receiveLikeCounts: 0
+			}
 		},
 		onLaunch: function() {
 			console.log('App Launch');

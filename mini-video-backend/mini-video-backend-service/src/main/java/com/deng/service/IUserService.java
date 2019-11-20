@@ -1,8 +1,6 @@
 package com.deng.service;
 
 import com.deng.domain.Users;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface IUserService {
 
@@ -26,4 +24,15 @@ public interface IUserService {
      * @return
      */
     Users queryUserForLogin(String username, String password);
+
+    /**
+     * 更新用户信息
+     * @param user
+     */
+    void updateUserInfo(Users user);
+
+    /**
+     * @Description: 查询用户信息
+     */
+    Users queryUserInfo(String userId);
 }

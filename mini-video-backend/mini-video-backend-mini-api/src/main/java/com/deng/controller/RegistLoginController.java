@@ -10,6 +10,7 @@ import com.deng.utils.ValidatorUtils;
 import com.deng.vo.UserVO;
 import exception.MyInternalException;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,15 @@ public class RegistLoginController extends BasicController {
 
     @Autowired
     IUserService userService;
+
+    @PostMapping("/logout")
+    @ApiOperation(value = "用户注销", notes = "用户注销的接口")
+    @ApiImplicitParam(name = "userId", value = "用户id", required = true, dataType = "String",
+            paramType = "query")
+    public JSONResult logout(String userId) {
+        redis.del(USER_REDIS_SESSION + ":" + userId);
+        return JSONResult.ok();
+    }
 
     @PostMapping("/regist")
     @ApiOperation(value = "用户注册", notes = "用户注册的接口")

@@ -13,7 +13,11 @@
 			"style": {}
 		}
 
-	],
+	    ,{
+            "path" : "pages/mine/mine",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "短视频分享平台",

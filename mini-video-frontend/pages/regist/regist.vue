@@ -43,7 +43,6 @@
 			},
 			doRegist(e) {
 				var user = e.detail.value
-				var globaldata = this.globaldata;
 				if (user.length == 0 || user.password == 0) {
 					uni.showToast({
 						icon: "none",
@@ -71,7 +70,7 @@
 									mask: true,
 									title: "注册成功"
 								})
-								globaldata = res.data.data;
+								getApp().globalData.userInfo = res.data.data;
 							} else if (status == 500) {
 								uni.showToast({
 									icon: "none",

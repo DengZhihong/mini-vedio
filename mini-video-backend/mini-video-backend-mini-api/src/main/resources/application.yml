@@ -31,3 +31,8 @@ server:
   port: 8081
   tomcat:
     uri-encoding: UTF-8
+#自定义参数
+#文件保存的命名空间
+upload:
+  file-space: "J:/毕业设计-资料/mini-vedio-upload"
+  face: "/face"

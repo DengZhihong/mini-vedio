@@ -42,7 +42,6 @@
 			},
 			doLogin(e) {
 				var user = e.detail.value;
-				var globaldata = this.globaldata;
 				if (user.length == 0 || user.password == 0) {
 					uni.showToast({
 						icon: "none",
@@ -70,8 +69,11 @@
 									mask: true,
 									title: "登录成功",
 								})
-								globaldata = res.data.data;
+								getApp().globalData.userInfo = res.data.data;
 								//TODO页面跳转
+								uni.navigateTo({
+									url:"../mine/mine"
+								})
 							} else if (status == 500) {
 								uni.showToast({
 									icon: "none",

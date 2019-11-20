@@ -1,7 +1,6 @@
 package com.deng.service.impl;
 
 import cn.hutool.core.util.IdUtil;
-import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.deng.domain.Users;
 import com.deng.mapper.UsersMapper;
@@ -38,6 +37,20 @@ public class UserServiceImpl implements IUserService {
         QueryWrapper<Users> userWrapper = new QueryWrapper<>();
         userWrapper.eq("username", username);
         userWrapper.eq("password", password);
+        return usersMapper.selectOne(userWrapper);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void updateUserInfo(Users user) {
+        usersMapper.updateById(user);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public Users queryUserInfo(String userId) {
+        QueryWrapper<Users> userWrapper = new QueryWrapper<>();
+        userWrapper.eq("id", userId);
         return usersMapper.selectOne(userWrapper);
     }
 }
