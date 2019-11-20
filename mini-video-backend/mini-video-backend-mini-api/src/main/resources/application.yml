@@ -20,6 +20,9 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 1000MB
+  redis:
+    port: 6379
+    host: 47.107.50.179
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 
@@ -28,17 +31,3 @@ server:
   port: 8081
   tomcat:
     uri-encoding: UTF-8
-##mybatis
-#mybatis:
-#  type-aliases-package: com.deng.pojo
-#  mapper-locations: classpath:mapper/*.xml
-##  通用mapper配置
-#mapper:
-#  mappers: com.deng.utils.MyMapper
-#  not-empty: false
-#  identity: MYSQL
-#分页插件
-#pagehelper:
-#  helper-dialect: mysql
-#  support-methods-arguments: true
-#  params: count=countSql

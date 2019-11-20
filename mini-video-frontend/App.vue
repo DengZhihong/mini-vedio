@@ -1,6 +1,10 @@
 <script>
 	import Vue from 'vue'
 	export default {
+		globalData: {
+			serverUrl: 'http://192.168.1.162:8081',
+			userInfo: null
+		},
 		onLaunch: function() {
 			console.log('App Launch');
 			uni.getSystemInfo({

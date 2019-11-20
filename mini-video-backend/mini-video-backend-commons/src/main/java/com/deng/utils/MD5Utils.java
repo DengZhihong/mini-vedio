@@ -1,4 +1,4 @@
-package com.imooc.utils;
+package com.deng.utils;
 
 import java.security.MessageDigest;
 
