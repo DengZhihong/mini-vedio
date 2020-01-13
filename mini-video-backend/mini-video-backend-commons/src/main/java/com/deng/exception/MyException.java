@@ -1,4 +1,4 @@
-package exception;
+package com.deng.exception;
 
 public class MyException extends RuntimeException {
 
