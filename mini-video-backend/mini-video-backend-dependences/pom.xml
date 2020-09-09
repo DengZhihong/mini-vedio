@@ -24,7 +24,7 @@
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <swagger.version>2.9.2</swagger.version>
         <hutool.version>5.0.6</hutool.version>
-        <hibernate.validator.version>5.3.4.Final</hibernate.validator.version>
+        <hibernate.validator.version>5.3.6.Final</hibernate.validator.version>
     </properties>
 
     <dependencyManagement>
